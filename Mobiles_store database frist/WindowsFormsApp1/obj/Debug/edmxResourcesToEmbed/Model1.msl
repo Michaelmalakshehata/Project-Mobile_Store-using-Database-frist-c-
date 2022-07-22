@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="accessoriesModelStoreContainer" CdmEntityContainer="accessoriesEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="accessoriesModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accessierdetailes">
+      <EntityTypeMapping TypeName="accessoriesModel.accessierdetaile">
+        <MappingFragment StoreEntitySet="accessierdetailes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="warranty" ColumnName="warranty" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accessierimages">
+      <EntityTypeMapping TypeName="accessoriesModel.accessierimage">
+        <MappingFragment StoreEntitySet="accessierimages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nameproduct" ColumnName="nameproduct" />
+          <ScalarProperty Name="productimg1" ColumnName="productimg1" />
+          <ScalarProperty Name="productimg2" ColumnName="productimg2" />
+          <ScalarProperty Name="productimg3" ColumnName="productimg3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="accessoriesModel.Bill">
+        <MappingFragment StoreEntitySet="Bills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+          <ScalarProperty Name="productname" ColumnName="productname" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerProducts">
+      <EntityTypeMapping TypeName="accessoriesModel.CustomerProduct">
+        <MappingFragment StoreEntitySet="CustomerProducts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="typeproduct" ColumnName="typeproduct" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="accessoriesModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mobildetailes">
+      <EntityTypeMapping TypeName="accessoriesModel.mobildetaile">
+        <MappingFragment StoreEntitySet="mobildetailes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="screen" ColumnName="screen" />
+          <ScalarProperty Name="storage" ColumnName="storage" />
+          <ScalarProperty Name="ram" ColumnName="ram" />
+          <ScalarProperty Name="battery" ColumnName="battery" />
+          <ScalarProperty Name="front_camera" ColumnName="front_camera" />
+          <ScalarProperty Name="back_camera" ColumnName="back_camera" />
+          <ScalarProperty Name="processor" ColumnName="processor" />
+          <ScalarProperty Name="android" ColumnName="android" />
+          <ScalarProperty Name="network" ColumnName="network" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="warranty" ColumnName="warranty" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mobile_images">
+      <EntityTypeMapping TypeName="accessoriesModel.mobile_images">
+        <MappingFragment StoreEntitySet="mobile_images">
+          <ScalarProperty Name="mobildetaileId" ColumnName="mobildetaileId" />
+          <ScalarProperty Name="nameproduct" ColumnName="nameproduct" />
+          <ScalarProperty Name="productimg1" ColumnName="productimg1" />
+          <ScalarProperty Name="productimg2" ColumnName="productimg2" />
+          <ScalarProperty Name="productimg3" ColumnName="productimg3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="accessoriesModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Confirm_Password" ColumnName="Confirm_Password" />
+          <ScalarProperty Name="Check_Answer" ColumnName="Check_Answer" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="accessierdetaileBills" TypeName="accessoriesModel.accessierdetaileBills" StoreEntitySet="accessierdetaileBills">
+      <EndProperty Name="accessierdetailes">
+        <ScalarProperty Name="id" ColumnName="idaccess" />
+      </EndProperty>
+      <EndProperty Name="Bills">
+        <ScalarProperty Name="Id" ColumnName="idbillaccess" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CustomerProductBills" TypeName="accessoriesModel.CustomerProductBills" StoreEntitySet="CustomerProductBills">
+      <EndProperty Name="Bills">
+        <ScalarProperty Name="Id" ColumnName="Bill_Id" />
+      </EndProperty>
+      <EndProperty Name="CustomerProducts">
+        <ScalarProperty Name="ID" ColumnName="CustomerProduct_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="mobildetaileBills" TypeName="accessoriesModel.mobildetaileBills" StoreEntitySet="mobildetaileBills">
+      <EndProperty Name="Bills">
+        <ScalarProperty Name="Id" ColumnName="idbillmob" />
+      </EndProperty>
+      <EndProperty Name="mobildetailes">
+        <ScalarProperty Name="id" ColumnName="idmob" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

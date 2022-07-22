@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="accessoriesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="accessierdetaileBills">
+    <Key>
+      <PropertyRef Name="idaccess" />
+      <PropertyRef Name="idbillaccess" />
+    </Key>
+    <Property Name="idaccess" Type="int" Nullable="false" />
+    <Property Name="idbillaccess" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="accessierdetailes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="warranty" Type="float" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="accessierimages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nameproduct" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="productimg1" Type="varbinary(max)" />
+    <Property Name="productimg2" Type="varbinary(max)" />
+    <Property Name="productimg3" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Bills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_phone" Type="int" Nullable="false" />
+    <Property Name="productname" Type="nvarchar(max)" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Customer_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerProductBills">
+    <Key>
+      <PropertyRef Name="CustomerProduct_ID" />
+      <PropertyRef Name="Bill_Id" />
+    </Key>
+    <Property Name="CustomerProduct_ID" Type="int" Nullable="false" />
+    <Property Name="Bill_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerProducts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="CustomerPhone" Type="int" Nullable="false" />
+    <Property Name="typeproduct" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Customer_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="mobildetaileBills">
+    <Key>
+      <PropertyRef Name="idmob" />
+      <PropertyRef Name="idbillmob" />
+    </Key>
+    <Property Name="idmob" Type="int" Nullable="false" />
+    <Property Name="idbillmob" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mobildetailes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="screen" Type="float" Nullable="false" />
+    <Property Name="storage" Type="int" Nullable="false" />
+    <Property Name="ram" Type="int" Nullable="false" />
+    <Property Name="battery" Type="int" Nullable="false" />
+    <Property Name="front_camera" Type="int" Nullable="false" />
+    <Property Name="back_camera" Type="int" Nullable="false" />
+    <Property Name="processor" Type="nvarchar(max)" />
+    <Property Name="android" Type="nvarchar(max)" />
+    <Property Name="network" Type="nvarchar(max)" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="warranty" Type="float" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="mobile_images">
+    <Key>
+      <PropertyRef Name="mobildetaileId" />
+    </Key>
+    <Property Name="mobildetaileId" Type="int" Nullable="false" />
+    <Property Name="nameproduct" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="productimg1" Type="varbinary(max)" />
+    <Property Name="productimg2" Type="varbinary(max)" />
+    <Property Name="productimg3" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Confirm_Password" Type="nvarchar(max)" />
+    <Property Name="Check_Answer" Type="nvarchar(max)" />
+    <Property Name="Answer" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_dbo_accessierdetaileBills_dbo_accessierdetailes_idaccess">
+    <End Role="accessierdetailes" Type="Self.accessierdetailes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="accessierdetaileBills" Type="Self.accessierdetaileBills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accessierdetailes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="accessierdetaileBills">
+        <PropertyRef Name="idaccess" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_accessierdetaileBills_dbo_Bills_idbillaccess">
+    <End Role="Bills" Type="Self.Bills" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="accessierdetaileBills" Type="Self.accessierdetaileBills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="accessierdetaileBills">
+        <PropertyRef Name="idbillaccess" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_accessierimages_dbo_accessierdetailes_id">
+    <End Role="accessierdetailes" Type="Self.accessierdetailes" Multiplicity="1" />
+    <End Role="accessierimages" Type="Self.accessierimages" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="accessierdetailes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="accessierimages">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Bills_dbo_Customers_Customer_ID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Bills" Type="Self.Bills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Bills">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CustomerProductBills_dbo_Bills_Bill_Id">
+    <End Role="Bills" Type="Self.Bills" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerProductBills" Type="Self.CustomerProductBills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerProductBills">
+        <PropertyRef Name="Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CustomerProductBills_dbo_CustomerProducts_CustomerProduct_ID">
+    <End Role="CustomerProducts" Type="Self.CustomerProducts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerProductBills" Type="Self.CustomerProductBills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerProducts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerProductBills">
+        <PropertyRef Name="CustomerProduct_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CustomerProducts_dbo_Customers_Customer_ID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerProducts" Type="Self.CustomerProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerProducts">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_mobildetaileBills_dbo_Bills_idbillmob">
+    <End Role="Bills" Type="Self.Bills" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="mobildetaileBills" Type="Self.mobildetaileBills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="mobildetaileBills">
+        <PropertyRef Name="idbillmob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_mobildetaileBills_dbo_mobildetailes_idmob">
+    <End Role="mobildetailes" Type="Self.mobildetailes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="mobildetaileBills" Type="Self.mobildetaileBills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mobildetailes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mobildetaileBills">
+        <PropertyRef Name="idmob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_mobile_images_dbo_mobildetailes_mobildetaileId">
+    <End Role="mobildetailes" Type="Self.mobildetailes" Multiplicity="1" />
+    <End Role="mobile_images" Type="Self.mobile_images" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mobildetailes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mobile_images">
+        <PropertyRef Name="mobildetaileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="accessoriesModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="accessierdetaileBills" EntityType="Self.accessierdetaileBills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="accessierdetailes" EntityType="Self.accessierdetailes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="accessierimages" EntityType="Self.accessierimages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerProductBills" EntityType="Self.CustomerProductBills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerProducts" EntityType="Self.CustomerProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mobildetaileBills" EntityType="Self.mobildetaileBills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mobildetailes" EntityType="Self.mobildetailes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mobile_images" EntityType="Self.mobile_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_accessierdetaileBills_dbo_accessierdetailes_idaccess" Association="Self.FK_dbo_accessierdetaileBills_dbo_accessierdetailes_idaccess">
+      <End Role="accessierdetailes" EntitySet="accessierdetailes" />
+      <End Role="accessierdetaileBills" EntitySet="accessierdetaileBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_accessierdetaileBills_dbo_Bills_idbillaccess" Association="Self.FK_dbo_accessierdetaileBills_dbo_Bills_idbillaccess">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="accessierdetaileBills" EntitySet="accessierdetaileBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_accessierimages_dbo_accessierdetailes_id" Association="Self.FK_dbo_accessierimages_dbo_accessierdetailes_id">
+      <End Role="accessierdetailes" EntitySet="accessierdetailes" />
+      <End Role="accessierimages" EntitySet="accessierimages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Bills_dbo_Customers_Customer_ID" Association="Self.FK_dbo_Bills_dbo_Customers_Customer_ID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Bills" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CustomerProductBills_dbo_Bills_Bill_Id" Association="Self.FK_dbo_CustomerProductBills_dbo_Bills_Bill_Id">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="CustomerProductBills" EntitySet="CustomerProductBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CustomerProductBills_dbo_CustomerProducts_CustomerProduct_ID" Association="Self.FK_dbo_CustomerProductBills_dbo_CustomerProducts_CustomerProduct_ID">
+      <End Role="CustomerProducts" EntitySet="CustomerProducts" />
+      <End Role="CustomerProductBills" EntitySet="CustomerProductBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CustomerProducts_dbo_Customers_Customer_ID" Association="Self.FK_dbo_CustomerProducts_dbo_Customers_Customer_ID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerProducts" EntitySet="CustomerProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_mobildetaileBills_dbo_Bills_idbillmob" Association="Self.FK_dbo_mobildetaileBills_dbo_Bills_idbillmob">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="mobildetaileBills" EntitySet="mobildetaileBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_mobildetaileBills_dbo_mobildetailes_idmob" Association="Self.FK_dbo_mobildetaileBills_dbo_mobildetailes_idmob">
+      <End Role="mobildetailes" EntitySet="mobildetailes" />
+      <End Role="mobildetaileBills" EntitySet="mobildetaileBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_mobile_images_dbo_mobildetailes_mobildetaileId" Association="Self.FK_dbo_mobile_images_dbo_mobildetailes_mobildetaileId">
+      <End Role="mobildetailes" EntitySet="mobildetailes" />
+      <End Role="mobile_images" EntitySet="mobile_images" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
